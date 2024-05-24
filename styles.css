@@ -1,0 +1,109 @@
+body {
+    font-family: 'Copperplate Gothic Light', sans-serif;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.title {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    border: 15px solid transparent;
+    border-image: linear-gradient(to right, #43cea2, #185a9d);
+    border-image-slice: 1;
+    padding: 60px;
+    border-radius: 20px;
+    animation: borderGlow 2s infinite;
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 20px #fff; }
+    50% { box-shadow: 0 0 40px #43cea2; }
+    100% { box-shadow: 0 0 20px #fff; }
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.cell {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 80%);
+    border: 2px solid #fff;
+    border-radius: 15px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+#move-indicator {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+#current-player {
+    color: #43cea2;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#result.hidden {
+    display: none;
+}
+
+#message {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#restart {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#restart:hover {
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.X {
+    color: #43cea2;
+}
+
+.O {
+    color: #ff7e5f;
+}
